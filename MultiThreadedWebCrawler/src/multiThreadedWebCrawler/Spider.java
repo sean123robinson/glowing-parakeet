@@ -44,7 +44,7 @@ public class Spider implements Runnable{
 			}
 		}
 	}
-	
+	 
 	private Document request(String url) {
 		try {
 			Connection con = Jsoup.connect(url);

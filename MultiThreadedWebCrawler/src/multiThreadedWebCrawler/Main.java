@@ -1,10 +1,16 @@
 package multiThreadedWebCrawler;
 
-import java.util.ArrayList;
+import java.util.*;
+
+
 
 public class Main {
 
+	public int num_threads;
+	
 	public static void main(String[] args) {
+		
+		/*
 		Scanner input = new Scanner(System.in);
 		System.out.print("How many sites do you want to launch the crawler on? Enter a number: ");
 		int num_threads = input.nextInt();
@@ -20,17 +26,17 @@ public class Main {
 		System.out.println(Arrays.toString(urlList));
 		
 		input.close();
-		
+		*/
 		ArrayList<Spider> bots = new ArrayList<>();
-		
+		/*
 		for(int i=0; i<num_threads; i++) {
 			bots.add(new Spider(urlList[i], i+1));
 		}
-		/*
+		*/
 		bots.add(new Spider("https://abcnews.go.com", 1));
 		bots.add(new Spider("https://www.npr.org", 2)); 
 		bots.add(new Spider("https://www.nytimes.com", 3));
-		*/
+		
 		for(Spider s : bots) {
 			try {
 				s.getThread().join();
@@ -39,5 +45,8 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
+	}
+	public void CreateSpider(String url) {
+		
 	}
 }
