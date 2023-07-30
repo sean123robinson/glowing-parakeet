@@ -15,7 +15,7 @@ public class Spider implements Runnable{
 	private ArrayList<String> visitedLinks = new ArrayList<String>();
 	private int ID;
 	
-	
+//initiates the spider and starts the thread, accepts a string for the starting link and a num to identify the working thread
 	public Spider(String link, int num) {
 		System.out.print("Spider created");
 		first_link = link;
@@ -25,11 +25,14 @@ public class Spider implements Runnable{
 		thread.start();
 	}
 	
+	
 	@Override
 	public void run() {
 		crawl(1, first_link);
 	}
 	
+	
+//this is where the crawl happens. Makes sure the level does not go past the MAX_DEPTH and gets the html file from the site and links
 	private void crawl(int level, String url) {
 		if (level <= MAX_DEPTH) {
 			Document doc = request(url);
@@ -45,6 +48,9 @@ public class Spider implements Runnable{
 		}
 	}
 	 
+	
+//this is where the html is grabbed. Prints the ID of the bot that found it, the url, and the title of the doc found.
+	//also adds the url to a visited links arrayList
 	private Document request(String url) {
 		try {
 			Connection con = Jsoup.connect(url);
