@@ -4,7 +4,7 @@ import java.util.*;
 
 
 
-public class Main {
+public class Main extends GUI {
 
 	public int num_threads;
 	
@@ -45,8 +45,5 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
-	}
-	public void CreateSpider(String url) {
-		
 	}
 }

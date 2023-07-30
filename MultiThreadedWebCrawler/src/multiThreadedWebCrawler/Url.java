@@ -1,6 +1,6 @@
 package multiThreadedWebCrawler;
 
-public class Url extends Main{
+public class Url {
 	private String urlString;
 	
 	public Url(String s) {
