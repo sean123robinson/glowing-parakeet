@@ -32,7 +32,8 @@ public class Spider implements Runnable{
 	}
 	
 	
-//this is where the crawl happens. Makes sure the level does not go past the MAX_DEPTH and gets the html file from the site and links
+//this is where the crawl happens. Makes sure the level does not go past the MAX_DEPTH
+	//and ensures that the next link found has not already been visited
 	private void crawl(int level, String url) {
 		if (level <= MAX_DEPTH) {
 			Document doc = request(url);

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
@@ -22,18 +23,18 @@ public class GUI implements ActionListener{
 //variable initialization
 	public String Url1, Url2, Url3;
 	
-	JLabel url_list;
+	JLabel url_list, label;
 	JFrame frame;
 	JPanel panel;
 	JTextField url1,url2,url3;
 	JButton enterUrlsButton, startButton, stopButton;
+	
 	ArrayList<Spider> bots = new ArrayList<>();
-	
-	
 	
 	public GUI() {
 		
 		frame = new JFrame();
+		label = new JLabel("Urls must match http:// or https:// format.");
 		
 //These are TextFields to grab user input and display default values for urls to crawl
 		url1 = new JTextField("https://abcnews.go.com", 50);
@@ -108,6 +109,8 @@ public class GUI implements ActionListener{
 		panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(30, 80, 100, 80));
 		panel.setLayout(new GridLayout(0, 1));
+		
+		panel.add(label);
 		
 		panel.add(url1);
 		panel.add(url2);
